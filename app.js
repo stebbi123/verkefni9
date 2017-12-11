@@ -21,9 +21,16 @@ function checkAnswer(checker){
     });
     $(".choices").fadeIn("slow", function(){})
     $(".question").fadeIn("slow", function() {});
+    console.log(counter);
+
   }
   else {
     alert("Incorrect");
+  }
+  if (counter === 3) {
+    $(".message").empty().append("Congratulations you win!");
+    $(".btn-answer1").hide();
+    $(".btn-answer2").hide();
   }
 }
 
@@ -33,6 +40,7 @@ function checkAnswer(checker){
 
   $(".btn-answer1").on("click", function(){
     checkAnswer(0);
+
   });
   $(".btn-answer2").on("click", function(){
     checkAnswer(1);
